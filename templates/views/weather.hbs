@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+
+        <form method="POST" action="/submit-city" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputCityName" name="cityName"
+                    placeholder="Enter a location">
+            </div>
+            <button type="submit" class="btn btn-primary ml-3">Get weather</button>
+        </form>
+
+        {{#if forecastUnavailable}}
+        <p>Forecast unavailable. Please try again</p>
+        {{/if}}
+
+        <br>
+
+        {{#if city}}
+        <div>Weather data for: {{city}}, {{region}}</div>
+        {{/if}}
+
+        {{#if localtime}}
+        <div>Local time: {{localtime}}</div>
+        {{/if}}
+
+        {{#if temperature}}
+        <div>Temperature: {{temperature}}°{{unit}}</div>
+        {{/if}}
+
+        {{#if weather_descriptions}}
+        <div>Forecast: {{weather_descriptions}}</div>
+        {{/if}}
+
+
+        {{#if wind_speed}}
+        <div>Wind speed: {{wind_speed}} mph</div>
+        {{/if}}
+        {{#if wind_degree}}
+        <div>Wind degree: {{wind_degree}}</div>
+        {{/if}}
+        {{#if wind_dir}}
+        <div>Wind direction: {{wind_dir}}</div>
+        {{/if}}
+
+        {{#if pressure}}
+        <div>Pressure: {{pressure}} mb</div>
+        {{/if}}
+        {{#if precip}}
+        <div>Precipitation: {{precip}}</div>
+        {{/if}}
+
+        {{#if humidity}}
+        <div>Humidity: {{humidity}}</div>
+        {{/if}}
+        {{#if cloudcover}}
+        <div>Cloud Cover: {{cloudcover}}</div>
+        {{/if}}
+        {{#if feelslike}}
+        <div>Feels like: {{feelslike}}</div>
+        {{/if}}
+        {{#if uv_index}}
+        <div>UV Index: {{uv_index}}</div>
+        {{/if}}
+        {{#if visibility}}
+        <div>Visibility: {{visibility}}</div>
+        {{/if}}
+        {{#if is_day}}
+        <div>Daytime? {{is_day}}</div>
+        {{/if}}
+        {{#if mintemp}}
+        <div>Low: {{mintemp}}°{{unit}}</div>
+        {{/if}}
+        {{#if maxtemp}}
+        <div>High: {{maxtemp}}°{{unit}}</div>
+        {{/if}}
+        {{#if avgtemp}}
+        <div>Avg temp: {{avgtemp}}°{{unit}}</div>
+        {{/if}}
+        {{#if sunhour}}
+        <div>Hours of sun: {{sunhour}}</div>
+        {{/if}}
+        {{#if sunrise}}
+        <div>Sunrise: {{sunrise}}</div>
+        {{/if}}
+        {{#if sunset}}
+        <div>Sunset: {{sunset}}</div>
+        {{/if}}
+        {{#if moonrise}}
+        <div>Moonrise: {{moonrise}}</div>
+        {{/if}}
+        {{#if moonset}}
+        <div>Moonset {{moonset}}</div>
+        {{/if}}
+        {{#if moon_phase}}
+        <div>Moon phase: {{moon_phase}}</div>
+        {{/if}}
+        {{#if moon_illumination}}
+        <div>Moon illumination: {{moon_illumination}}</div>
+        {{/if}}
+        {{#if tmr_mintemp}}
+        <div>tmr_mintemp: {{tmr_mintemp}}</div>
+        {{/if}}
+        {{#if tmr_maxtemp}}
+        <div>tmr_maxtemp: {{tmr_maxtemp}}</div>
+        {{/if}}
+        {{#if tmr_avgtemp}}
+        <div>tmr_avgtemp: {{tmr_avgtemp}}</div>
+        {{/if}}
+        {{#if tmr_sunhour}}
+        <div>tmr_sunhour: {{tmr_sunhour}}</div>
+        {{/if}}
+        {{#if tmr_sunrise}}
+        <div>tmr_sunrise: {{tmr_sunrise}}</div>
+        {{/if}}
+        {{#if tmr_sunset}}
+        <div>tmr_sunset: {{tmr_sunset}}</div>
+        {{/if}}
+        {{#if tmr_moonrise}}
+        <div>tmr_moonrise: {{tmr_moonrise}}</div>
+        {{/if}}
+        {{#if tmr_moonset}}
+        <div>tmr_moonset: {{tmr_moonset}}</div>
+        {{/if}}
+
+
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>
