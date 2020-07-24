@@ -27,9 +27,6 @@ module.exports = (
     } else if (!response) {
       callback("Error: no response", undefined)
     } else {
-      console.log("@@@@@@@")
-      console.log(units)
-      console.log(response.body)
       callback(undefined, response.body)
     }
   })
